@@ -26,11 +26,25 @@
 import argparse, base64, json, os, subprocess, sys, time, urllib.error, urllib.request
 from pathlib import Path
 
-BASE = "https://api.minimax.io"
+# 区域：国内与国际是**两套账号、互相不能通用**
+#   cn   → api.minimaxi.com      钥匙串 dailyvideos-minimax-api-key（与配音同账号）
+#   intl → api.minimax.io        钥匙串 MINIMAX_API_KEY
+REGIONS = {
+    "cn":   ("https://api.minimaxi.com", "dailyvideos-minimax-api-key"),
+    "intl": ("https://api.minimax.io",   "MINIMAX_API_KEY"),
+}
+BASE = REGIONS["cn"][0]          # 由 --region 覆盖
 CREATE = f"{BASE}/v2/video_generation"
-QUERY = f"{BASE}/v2/query/video_generation/"
-KEYCHAIN_SERVICE = "MINIMAX_API_KEY"
+QUERY = f"{BASE}/v2/query/video_generation/"     # + <task_id>
+KEYCHAIN_SERVICE = REGIONS["cn"][1]
 MODELS = ("MiniMax-H3", "MiniMax-H3-Max")
+
+
+def set_region(region: str) -> None:
+    global BASE, CREATE, QUERY, KEYCHAIN_SERVICE
+    BASE, KEYCHAIN_SERVICE = REGIONS[region]
+    CREATE = f"{BASE}/v2/video_generation"
+    QUERY = f"{BASE}/v2/query/video_generation/"     # + <task_id>
 
 
 def api_key() -> str:
@@ -124,17 +138,22 @@ def submit(args, key: str) -> str:
     return d["task_id"]
 
 
-def poll(task_id: str, key: str, interval: int = 15, timeout: int = 1800):
+def _unwrap(d: dict) -> dict:
+    """V2 响应把状态与结果嵌在 task 下；旧版是平铺。两种都兼容。"""
+    return d.get("task") or d
+
+
+def poll(task_id: str, key: str, interval: int = 10, timeout: int = 1800):
     t0 = time.time()
     while True:
-        d = _req(f"{QUERY}?task_id={task_id}", key)
-        st = (d.get("status") or "").lower()
+        t = _unwrap(_req(f"{QUERY}{task_id}", key))   # 任务 ID 在路径里，不是查询参数
+        st = (t.get("status") or "").lower()
         el = int(time.time() - t0)
-        print(f"  [{el:>4}s] {st or '(等待中)'}")
+        print(f"  [{el:>4}s] {st or '(等待中)'}", flush=True)
         if st in ("succeeded", "success"):
-            return d
+            return t
         if st in ("failed", "cancelled"):
-            sys.exit(f"❌ 任务 {st}：{json.dumps(d, ensure_ascii=False)[:400]}")
+            sys.exit(f"❌ 任务 {st}：{json.dumps(t, ensure_ascii=False)[:400]}")
         if time.time() - t0 > timeout:
             sys.exit(f"⏱ 超时（{timeout}s），task_id={task_id} 可稍后用 --task-id 续查")
         time.sleep(interval)
@@ -142,7 +161,9 @@ def poll(task_id: str, key: str, interval: int = 15, timeout: int = 1800):
 
 def download(d: dict, out_dir: Path) -> Path:
     out_dir.mkdir(parents=True, exist_ok=True)
-    url = d.get("download_url") or d.get("video_url") or d.get("url")
+    d = _unwrap(d)
+    url = ((d.get("content") or {}).get("url")
+           or d.get("download_url") or d.get("video_url") or d.get("url"))
     if not url and d.get("file_id"):
         f = _req(f"{BASE}/v1/files/retrieve?file_id={d['file_id']}", os.environ.get("MINIMAX_API_KEY", ""))
         url = (f.get("file") or {}).get("download_url") or f.get("download_url")
@@ -161,6 +182,8 @@ def main():
     ap.add_argument("--scene", help="场景参考图")
     ap.add_argument("--ref-image", action="append", help="额外参考图，可重复")
     ap.add_argument("--prompt-file", help="提示词文件（≤2000 字符）")
+    ap.add_argument("--region", default="cn", choices=tuple(REGIONS),
+                    help="cn=国内 api.minimaxi.com（与配音同账号，默认）；intl=国际 api.minimax.io")
     ap.add_argument("--model", default="MiniMax-H3", choices=MODELS)
     ap.add_argument("--duration", type=int, default=6, help="4-15（H3-Max 为 5-15）")
     ap.add_argument("--resolution", default="768P", choices=("768P", "2K", "480P"))
@@ -171,6 +194,8 @@ def main():
     ap.add_argument("--no-wait", action="store_true")
     args = ap.parse_args()
 
+    set_region(args.region)
+    print(f"  区域 {args.region} → {BASE}", flush=True)
     key = api_key()
     out = Path(args.out_dir)
 
