@@ -11,7 +11,7 @@ EP.160 有 7 段配音（含反面段与判词段共用场景 5），映射为�
 import json, re, sys
 from pathlib import Path
 
-ROOT = Path("<REPO>")
+ROOT = Path("/Users/chao/Documents/dailyvideos")
 IDS = ["01-hook", "02-facts", "03-mechanism", "04-action", "05-verdict"]
 FRAME_MAP = [[1], [2], [3], [4], [5, 6, 7]]
 

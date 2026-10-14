@@ -4,7 +4,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
 
-const ROOT = path.resolve("<REPO>");
+const ROOT = path.resolve("/Users/chao/Documents/dailyvideos");
 const TEMPLATE = path.join(ROOT, "videos/grok-image-2-editing");
 const DATE = "2026-08-11";
 const CHECKED = "2026-08-11 08:15 CST";

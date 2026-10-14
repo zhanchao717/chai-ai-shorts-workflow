@@ -4,7 +4,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
 
-const root = path.resolve("<REPO>");
+const root = path.resolve("/Users/chao/Documents/dailyvideos");
 const project = path.join(root, "videos/deepseek-harness-fast");
 const ffprobe = path.join(project, "bin/ffprobe");
 const audioNames = ["01-v2", "02-v2", "03-v2", "04-v2", "05-v2"];

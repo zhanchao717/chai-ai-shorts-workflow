@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-project_root="<REPO>"
+project_root="/Users/chao/Documents/dailyvideos"
 
 generate_episode() {
   local episode_dir="$1"

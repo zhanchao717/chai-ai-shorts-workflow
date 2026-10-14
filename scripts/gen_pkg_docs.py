@@ -9,7 +9,7 @@ from pathlib import Path
 ep, proj, title, dur, hook, pillar, problem, conclusion, cover_title, source, judge = sys.argv[1:12]
 import datetime as _dt
 PKG_DATE = os.environ.get("PKG_DATE") or _dt.date.today().isoformat()
-pkg = Path(f"<REPO>/content/episode-{ep}/publish-package-{PKG_DATE}")
+pkg = Path(f"/Users/chao/Documents/dailyvideos/content/episode-{ep}/publish-package-{PKG_DATE}")
 pkg.mkdir(parents=True, exist_ok=True)
 t1, t2 = cover_title.split("/")
 

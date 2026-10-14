@@ -71,7 +71,7 @@ def corr(sub, kx, ky, label, log=False):
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("xlsx", nargs="?", default="/Users/<you>/Downloads/作品列表导出.xlsx")
+    ap.add_argument("xlsx", nargs="?", default="/Users/chao/Downloads/作品列表导出.xlsx")
     ap.add_argument("--since", default="2026-08-01")
     a = ap.parse_args()
     since = dt.datetime.strptime(a.since, "%Y-%m-%d")

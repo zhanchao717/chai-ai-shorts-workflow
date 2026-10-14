@@ -17,7 +17,7 @@ if (!ep) { console.error('用法：把期号写进 /tmp/cover_ep.txt'); process.
 const url = (fs.existsSync('/tmp/cover_chat_url.txt') ? fs.readFileSync('/tmp/cover_chat_url.txt', 'utf8') : '').trim();
 if (!/chatgpt\.com\/c\//.test(url)) { console.error('❌ /tmp/cover_chat_url.txt 里没有会话 URL'); process.exit(1); }
 const want = ratio === '3x4' ? [0.70, 0.80] : [1.25, 1.42];
-const out = `<REPO>/content/episode-${ep}/exp-gpt/cover-${ratio}.png`;
+const out = `/Users/chao/Documents/dailyvideos/content/episode-${ep}/exp-gpt/cover-${ratio}.png`;
 
 const IMGS = `(() => [...document.querySelectorAll('img')]
   .filter(x => /estuary\\/content|oaidalleapi|oaiusercontent|backend-api\\/files/.test(x.src||'') && x.naturalWidth > 500)

@@ -129,8 +129,8 @@ def build(out):
     for p in out.rglob("*"):
         if p.is_file() and p.suffix in {".md", ".json", ".html", ".py"}:
             s = p.read_text()
-            if "<REPO>" in s:
-                p.write_text(s.replace("<REPO>", "<原制作工作区>"))
+            if "/Users/chao/Documents/dailyvideos" in s:
+                p.write_text(s.replace("/Users/chao/Documents/dailyvideos", "<原制作工作区>"))
     # Export sanitization can change prose reports; bind the final exported bytes.
     spec_path = release / "release-spec.json"
     final_spec = json.loads(spec_path.read_text())

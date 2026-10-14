@@ -12,7 +12,7 @@
 
 const ep = (fs.existsSync('/tmp/xhs_ep.txt') ? fs.readFileSync('/tmp/xhs_ep.txt', 'utf8') : '').trim();
 if (!ep) { console.error('用法：把期号写进 /tmp/xhs_ep.txt'); process.exit(1); }
-const cover = `<REPO>/content/episode-${ep}/publish-package-2026-09-22/cover-3x4.png`;
+const cover = `/Users/chao/Documents/dailyvideos/content/episode-${ep}/publish-package-2026-09-22/cover-3x4.png`;
 if (!fs.existsSync(cover)) { console.error('❌ 找不到封面 ' + cover); process.exit(1); }
 const b64 = fs.readFileSync(cover).toString('base64');
 console.log(`封面 ${cover}（${(b64.length * 3 / 4 / 1048576).toFixed(2)}MB base64）`);

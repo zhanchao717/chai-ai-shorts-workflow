@@ -5,7 +5,7 @@
 caption-overrides.json、captions.html 模板、publish-timeline/*.json、assets/voice/*.mp3）。
 
 用法：python3 scripts/gen_chai_frames.py <spec.json>
-spec 字段见 <REPO>/specs/146.example.json。
+spec 字段见 /Users/chao/Documents/dailyvideos/specs/146.example.json。
 生成：compositions/frames/<spec 里每个场景>.html + captions.html 注入 + cover.html。
 - 01–05（hook/facts/mechanism/action/verdict）为既有必填场景，版式与输出**逐字节不变**。
 - 深度版（N=7）：**场景与音频段一一对应且顺序即角色**——01 hook / 02 facts / 03 mechanism /
@@ -51,7 +51,7 @@ import json, math, re, sys, os, subprocess, tempfile
 import shutil
 from pathlib import Path
 
-ROOT = Path("<REPO>")
+ROOT = Path("/Users/chao/Documents/dailyvideos")
 HEAD = '''@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@900&display=swap');
     @font-face{font-family:CobaltSans;src:url("assets/fonts/CobaltSans.ttc") format("truetype");font-weight:400 700}
     @font-face{font-family:CobaltMono;src:url("assets/fonts/CobaltMono.ttf") format("truetype");font-weight:400}

@@ -15,7 +15,7 @@
 原始来源：/tmp/build_ep_multi.py（2026-08-19 迁移）。"""
 import json, pathlib, re
 
-ROOT = pathlib.Path("<REPO>")
+ROOT = pathlib.Path("/Users/chao/Documents/dailyvideos")
 TPL = ROOT / "videos/openai-astra-pause"
 
 BLUE = "#1F2BE0"

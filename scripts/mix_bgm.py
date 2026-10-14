@@ -19,7 +19,7 @@ BGM 文件固定为 assets/bgm/paperman-the-king.mp3（网易云版权曲库—�
 import subprocess, sys, wave, os
 import numpy as np
 
-ROOT = "<REPO>"
+ROOT = "/Users/chao/Documents/dailyvideos"
 BGM_MP3 = f"{ROOT}/assets/bgm/paperman-the-king.mp3"
 AF = "/usr/bin/afconvert"
 
@@ -76,7 +76,7 @@ def mix(video, out_mp4, dur, bg_start=0.0):
     m4a = "/tmp/_mixed.m4a"
     subprocess.run([AF, "/tmp/_mixed.wav", m4a, "-f", "m4af", "-d", "aac", "-b", "192000"],
                    check=True, capture_output=True)
-    ff = "<REPO>/videos/qwen38-max-explained/bin/ffmpeg"
+    ff = "/Users/chao/Documents/dailyvideos/videos/qwen38-max-explained/bin/ffmpeg"
     subprocess.run([ff, "-y", "-v", "error", "-i", video, "-i", m4a,
                     "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "copy",
                     "-movflags", "+faststart", out_mp4], check=True)

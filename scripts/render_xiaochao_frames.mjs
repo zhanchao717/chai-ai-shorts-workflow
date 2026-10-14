@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import {pathToFileURL} from "node:url";
-import puppeteer from "/Users/<you>/.npm/_npx/110f701c48e68d66/node_modules/puppeteer-core/lib/puppeteer/puppeteer-core.js";
+import puppeteer from "/Users/chao/.npm/_npx/110f701c48e68d66/node_modules/puppeteer-core/lib/puppeteer/puppeteer-core.js";
 
 const [projectArg, framesArg, fpsArg = "15"] = process.argv.slice(2);
 if (!projectArg || !framesArg) {
@@ -21,7 +21,7 @@ if (fs.existsSync(framesDir)) throw new Error(`refuse overwrite: ${framesDir}`);
 fs.mkdirSync(framesDir, {recursive: false});
 
 const browser = await puppeteer.launch({
-  executablePath: "/Users/<you>/.cache/hyperframes/chrome/chrome-headless-shell/mac_arm-152.0.7928.2/chrome-headless-shell-mac-arm64/chrome-headless-shell",
+  executablePath: "/Users/chao/.cache/hyperframes/chrome/chrome-headless-shell/mac_arm-152.0.7928.2/chrome-headless-shell-mac-arm64/chrome-headless-shell",
   headless: true,
   args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage", "--no-first-run", "--no-default-browser-check", "--hide-scrollbars"],
 });

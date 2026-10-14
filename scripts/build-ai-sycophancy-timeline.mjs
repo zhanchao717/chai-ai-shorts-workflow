@@ -4,7 +4,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
 
-const root = path.resolve("<REPO>");
+const root = path.resolve("/Users/chao/Documents/dailyvideos");
 const project = path.join(root, "videos/ai-sycophancy-question-first");
 const ffprobe = path.join(project, "bin/ffprobe");
 const audioNames = ["01", "02", "03", "04", "05"];

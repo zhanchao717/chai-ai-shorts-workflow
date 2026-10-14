@@ -1313,7 +1313,7 @@ python3 scripts/chai_check_motion.py /tmp/render24.mp4 --min-duration 180 --max-
 
 > ⚠️ `hyperframes render` 需要 PATH 上有 `ffmpeg` / `ffprobe`。本仓库把它们放在
 > `videos/<slug>/bin/`（Remotion 自带的精简构建包装器）；渲染前记得
-> `export PATH="<REPO>/videos/<slug>/bin:$PATH"`，
+> `export PATH="/Users/chao/Documents/dailyvideos/videos/<slug>/bin:$PATH"`，
 > 否则会直接报 `FFmpeg not found`（实测：渲染 2.9s 就退出）。
 
 ### 9.6.1 EP.170 的槽位路由实录（2026-09-12，24 帧 / 4 章 / 292.248s）

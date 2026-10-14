@@ -8,8 +8,8 @@
 """
 import pathlib, shutil, html
 
-ROOT = pathlib.Path("<REPO>")
-OUT = pathlib.Path("/Users/<you>/Documents/DSH/daily-workbench/预览-封面GPT")
+ROOT = pathlib.Path("/Users/chao/Documents/dailyvideos")
+OUT = pathlib.Path("/Users/chao/Documents/DSH/daily-workbench/预览-封面GPT")
 EPS = {
     "EP178": {
         "old": ROOT / "content/episode-178/publish-package-2026-09-13",

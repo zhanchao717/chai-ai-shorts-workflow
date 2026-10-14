@@ -32,7 +32,7 @@ import difflib
 import pathlib
 import textwrap
 
-ROOT = "<REPO>"
+ROOT = "/Users/chao/Documents/dailyvideos"
 NPX = ["npx", "--yes", "hyperframes@0.7.102"]
 FF = f"{ROOT}/videos/qwen38-max-explained/bin/ffmpeg"
 FP = f"{ROOT}/videos/llada-image-turbo/bin/ffprobe"
