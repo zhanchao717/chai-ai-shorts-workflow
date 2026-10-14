@@ -1,0 +1,105 @@
+{
+  "series": "了不起的小超人｜开源装备雷达",
+  "timezone": "Asia/Shanghai",
+  "schedule": ["07:30", "17:30"],
+  "output_mode": "prepare_only",
+  "publish_automatically": false,
+  "generate_covers": false,
+  "cover_policy": "沿用用户已经确认并发布过的旧封面；自动化不生成、不覆盖、不代选封面",
+  "candidate_limit_per_run": 18,
+  "production_limit_per_run": 3,
+  "dedupe_days": 30,
+  "categories": [
+    {"id": "ai-video", "name": "AI视频局", "weight": 35},
+    {"id": "agent-automation", "name": "Agent自动化局", "weight": 30},
+    {"id": "open-source-productivity", "name": "开源效率局", "weight": 20},
+    {"id": "github-trending", "name": "GitHub热榜", "weight": 15}
+  ],
+  "selection": {
+    "minimum_score": 70,
+    "required_checks": [
+      "官方仓库与README可核验",
+      "许可证与维护状态明确",
+      "时间与增长信号真实",
+      "中国大陆用户具备实际使用路径或已明确限制",
+      "内容适合在50到65秒内讲清"
+    ],
+    "score_weights": {
+      "visual_result": 25,
+      "audience_utility": 25,
+      "freshness_and_growth": 20,
+      "low_learning_cost": 15,
+      "maintainability_and_license": 15
+    }
+  },
+  "video": {
+    "engine": "HyperFrames",
+    "canvas": "1080x1920",
+    "fps": 30,
+    "duration_seconds": [50, 65],
+    "codec": "H.264/AAC",
+    "platform_safe_area": {
+      "bottom_reserved_px": 250,
+      "right_reserved_px_for_lower_third": 100,
+      "rule": "头像、逐句字幕和关键结论必须位于安全区上方"
+    },
+    "forbidden": [
+      "GitHub日报式念榜",
+      "只读项目名和Star数量",
+      "无法核验的实测或收益承诺",
+      "在任何对外文案中提及百度网盘",
+      "将评论设为获得资料的前置条件"
+    ]
+  },
+  "visual_identity": {
+    "concept": "暖色编辑手册",
+    "palette": {
+      "canvas": "#F6F0E4",
+      "ink": "#1B1916",
+      "orange_red": "#FF5A36",
+      "acid_lime": "#B9F227",
+      "warm_yellow": "#FFD45A",
+      "warm_gray": "#D8CEBF"
+    },
+    "ip_asset": "assets/brand/xiaochao/avatar-yellow-800.png",
+    "ip_usage": "1:1源图、圆形等比例裁切；头像和字幕固定在平台安全区上方，禁止非等比拉伸",
+    "forbidden": [
+      "柴主编钴蓝新闻演播室",
+      "深蓝电光青",
+      "蓝紫霓虹",
+      "旧版卡通头像",
+      "柴犬头像"
+    ]
+  },
+  "voice": {
+    "provider": "MiniMax",
+    "script": "scripts/minimax_tts.py",
+    "model": "speech-2.8-hd",
+    "voice_id": "Chinese (Mandarin)_Sincere_Adult",
+    "speed": 1.02,
+    "volume": 1.0,
+    "pitch": -1,
+    "emotion": "happy"
+  },
+  "audio": {
+    "background_music": true,
+    "file": "assets/music/look-beyond.mp3",
+    "music_volume": 0.1,
+    "fade_in_seconds": 1,
+    "fade_out_seconds": 1,
+    "target_lufs": -16
+  },
+  "output": {
+    "root_pattern": "output/xiaochao/YYYY-MM-DD",
+    "directories": ["videos-with-bgm", "videos", "copy", "qa"],
+    "overwrite_existing": false
+  },
+  "deliverables_per_item": [
+    "带背景音竖版MP4成片",
+    "无背景音30fps母版",
+    "口播、逐句字幕与MiniMax音频",
+    "抖音和小红书发布文案",
+    "来源与核验记录",
+    "代表帧质检材料"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "episode": null,
+  "video_sha256": null,
+  "authorization": {"scope": null, "evidence": null},
+  "platforms": {
+    "douyin": {"group_id": null, "stage": "not_started", "page_checks": null, "submit_requested_at": null, "platform_result": "unknown", "visibility": "unknown", "checked_at": null},
+    "xiaohongshu": {"group_id": null, "stage": "not_started", "page_checks": null, "submit_requested_at": null, "platform_result": "unknown", "visibility": "unknown", "checked_at": null},
+    "weixinchannel": {"group_id": null, "stage": "not_started", "page_checks": null, "submit_requested_at": null, "platform_result": "unknown", "visibility": "unknown", "checked_at": null}
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "version": "2026-10-01",
+  "timezone": "Asia/Shanghai",
+  "cache_ttl_seconds": 600,
+  "sources": [
+    {"id": "openai", "name": "OpenAI News", "kind": "rss", "role": "official_announcement", "url": "https://openai.com/news/rss.xml", "enabled": true, "note": "公司原始公告；正文事实仍须核验，RSS 不是全部产品文档。"},
+    {"id": "google_ai", "name": "Google AI Blog", "kind": "rss", "role": "official_announcement", "url": "https://blog.google/innovation-and-ai/rss/", "enabled": true, "note": "此次返回20条；未覆盖Gemini4公告，需用具体栏目和官方原文补漏。"},
+    {"id": "anthropic", "name": "Anthropic Newsroom", "kind": "anthropic_html", "role": "official_announcement", "url": "https://www.anthropic.com/news", "enabled": true, "note": "HTML 文章列表和嵌入发布日期；不假定存在官方 RSS。"},
+    {"id": "qbitai", "name": "量子位", "kind": "rss", "role": "media_lead", "url": "https://www.qbitai.com/feed/", "enabled": true, "note": "官网公开RSS，此次10条；置顶内容与公众号推送不保证全部同步。"},
+    {"id": "aiera", "name": "新智元", "kind": "aiera_json", "role": "media_lead", "url": "https://aiera.com.cn/feed.json", "enabled": true, "note": "官网详情页实际使用的公开JSON；只取标注新智元的条目，不假定等于微信推送时间。"},
+    {"id": "jiqizhixin", "name": "机器之心", "kind": "manual", "role": "media_lead", "url": "https://www.jiqizhixin.com/articles", "enabled": false, "note": "本次首页偏会员壳，文章库未抓到可核对列表；保留搜索/人工分享链接补充。"},
+    {"id": "zhidx", "name": "智东西", "kind": "manual", "role": "media_lead", "url": "https://zhidx.com/", "enabled": false, "note": "有专题和快讯，但静态首页的最新资讯区域为空；暂不把首页轮播当今天的新稿。"},
+    {"id": "ai_tech_review", "name": "AI科技评论 / 雷峰网", "kind": "manual", "role": "media_lead", "url": "https://tech.leiphone.com/", "enabled": false, "note": "产业独家、采访和研究补充；本轮未验证结构化实时采集。"}
+  ],
+  "primary_link_hosts": ["openai.com", "deploymentsafety.openai.com", "anthropic.com", "blog.google", "deepmind.google", "github.com", "huggingface.co", "arxiv.org", "openreview.net", "manus.im", "qwen.ai", "qwenlm.github.io", "deepseek.com", "microsoft.com", "research.microsoft.com", "nvidia.com"],
+  "note": "source role描述入口用途，不代表该入口每篇内容都是已验证的一手事实。媒体独家采访/实测可单独审查为原始材料；未阅读条件前不自动升级证据等级。"
+}

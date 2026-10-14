@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "artifacts": {
+    "video": {"path": "final.mp4", "sha256": "填写实际SHA256"},
+    "portrait_cover": {"path": "cover-3x4.png", "sha256": "填写实际SHA256"},
+    "landscape_cover": {"path": "cover-4x3.png", "sha256": "填写实际SHA256"},
+    "copy": {"path": "publish-copy.md", "sha256": "填写实际SHA256"},
+    "script": {"path": "SCRIPT.md", "sha256": "填写实际SHA256"},
+    "storyboard": {"path": "STORYBOARD.md", "sha256": "填写实际SHA256"},
+    "sources": {"path": "sources.md", "sha256": "填写实际SHA256"},
+    "technical_qc": {"path": "technical-qc.json", "sha256": "填写实际SHA256", "video_sha256": "填实际被审视频SHA256"},
+    "editorial_review": {"path": "quality-report.md", "sha256": "填写实际SHA256", "video_sha256": "填实际被审视频SHA256", "p0_open": null, "listened": null, "watched_continuously": null}
+  },
+  "note": "填写真实检查范围；未做听审写 false。文件改变后重新验收，不以刷新哈希绕过复核。"
+}

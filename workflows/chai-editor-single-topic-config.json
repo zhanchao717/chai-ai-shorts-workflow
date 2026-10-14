@@ -1,0 +1,85 @@
+{
+  "version": "2026-10-03",
+  "ownership": "media dimensions, encoding, duration profiles, layout coordinates and safe zones only",
+  "timezone": "Asia/Shanghai",
+  "durationSeconds": {
+    "min": 25,
+    "max": 90,
+    "profiles": {
+      "quickUtility": {
+        "min": 25,
+        "max": 40
+      },
+      "explainer": {
+        "min": 45,
+        "max": 75
+      },
+      "extendedExplainer": {
+        "min": 75,
+        "max": 90
+      }
+    }
+  },
+  "video": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "videoCodec": "h264",
+    "audioCodec": "aac"
+  },
+  "safeZones": {
+    "primaryContent": {
+      "left": 72,
+      "right": 72,
+      "top": 120,
+      "bottom": 360
+    },
+    "sourceLabel": {
+      "left": 156,
+      "right": 156,
+      "top": 1380,
+      "bottom": 430
+    }
+  },
+  "speechBar": {
+    "avatar": {
+      "left": 190,
+      "top": 1490,
+      "width": 110,
+      "height": 110
+    },
+    "caption": {
+      "left": 326,
+      "right": 156,
+      "top": 1488,
+      "height": 114
+    },
+    "placement": "below SOURCE, replacing the horizontal rule, centered as one group"
+  },
+  "covers": [
+    {
+      "name": "xiaohongshu-3x4",
+      "width": 1080,
+      "height": 1440,
+      "safeZone": {
+        "left": 80,
+        "right": 80,
+        "top": 100,
+        "bottom": 160
+      }
+    },
+    {
+      "name": "landscape-4x3",
+      "width": 1440,
+      "height": 1080,
+      "safeZone": {
+        "left": 100,
+        "right": 100,
+        "top": 80,
+        "bottom": 120
+      }
+    }
+  ],
+  "autoPublish": false,
+  "overwriteExisting": false
+}

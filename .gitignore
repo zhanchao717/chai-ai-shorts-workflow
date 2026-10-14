@@ -1,0 +1,22 @@
+# 媒体产物（本仓库只放流程与脚本）
+*.mp4
+*.mov
+*.mp3
+*.wav
+*.m4a
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+
+# 运行产物
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+*.bak-*
+*.log
+renders/
+qc/
+.cache/

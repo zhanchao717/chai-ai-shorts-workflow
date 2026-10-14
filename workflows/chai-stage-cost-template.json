@@ -1,0 +1,20 @@
+{
+  "episode": null,
+  "stages": [],
+  "stage_schema": {
+    "name": "research|script|review|tts|render|cover|publish",
+    "model_or_tool": null,
+    "input_sha256": null,
+    "tool_version": null,
+    "cache_hit": false,
+    "started_at": null,
+    "elapsed_seconds": null,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cost_amount": null,
+    "currency": null,
+    "output_paths": [],
+    "status": "unknown"
+  },
+  "note": "只记录实际可获取用量；未知写 null。不用估计数宣称省 token 百分比。此模板用于留痕，不是已实现的自动缓存。"
+}
