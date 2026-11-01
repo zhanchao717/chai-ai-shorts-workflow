@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 const URL_C = 'https://chatgpt.com/c/6ab72943-d3e0-83ee-a234-5c6ddecf93c1';
-const OUT = '/Users/chao/Documents/dailyvideos/content/episode-214/exp-gpt';
+const OUT = '<原制作工作区>/content/episode-214/exp-gpt';
 const task = await taskSpace('GPT 封面 · probe');
 const page = task.page('p1');
 await page.goto(URL_C, { waitUntil: 'domcontentloaded' });

@@ -26,7 +26,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const ROOT = '/Users/chao/Documents/dailyvideos';
+const ROOT = '<原制作工作区>';
 const ep = ((globalThis.process?.env?.COVER_EP) ||
             (fs.existsSync('/tmp/cover_ep.txt') ? fs.readFileSync('/tmp/cover_ep.txt', 'utf8') : '')).trim();
 if (!ep) {

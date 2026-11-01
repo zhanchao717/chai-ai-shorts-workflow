@@ -1,0 +1,8 @@
+{
+  "_comment": "export_preflight.py 的仓库级例外。只放确实无法修的历史归档，不要拿来屏蔽新问题。",
+  "ignore": [
+    "docs/端到端流程-旧版归档-2026-09-28.md",
+    "docs/流程打包与优化-2026-10-01.md",
+    "workflows/xiaochao-memory-archive.md"
+  ]
+}

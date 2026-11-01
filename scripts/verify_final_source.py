@@ -10,7 +10,7 @@ import pathlib
 import subprocess
 import sys
 
-FF = '/Users/chao/Documents/dailyvideos/node_modules/@remotion/compositor-darwin-arm64'
+FF = '<原制作工作区>/node_modules/@remotion/compositor-darwin-arm64'
 
 
 def frame_md5(video: str, t: float) -> str:

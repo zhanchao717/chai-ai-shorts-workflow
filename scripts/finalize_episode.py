@@ -13,7 +13,7 @@ afconvert 编码，杜绝拉伸。语音说完默认留 1.5s 定格收尾。
 import argparse, json, os, re, struct, subprocess, sys, wave
 import numpy as np
 
-ROOT = "/Users/chao/Documents/dailyvideos"
+ROOT = "<原制作工作区>"
 FF = f"{ROOT}/videos/llada-image-turbo/bin/ffmpeg"
 FP = FF.replace("ffmpeg", "ffprobe")
 AF = "/usr/bin/afconvert"

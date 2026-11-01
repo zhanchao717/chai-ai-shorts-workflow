@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-project_root="/Users/chao/Documents/dailyvideos"
+project_root="<原制作工作区>"
 ffmpeg_bin="$project_root/node_modules/@remotion/compositor-darwin-arm64/ffmpeg"
 music="$project_root/assets/music/look-beyond.mp3"
 output_dir="$project_root/output/xiaochao/2026-08-10/videos-with-bgm"

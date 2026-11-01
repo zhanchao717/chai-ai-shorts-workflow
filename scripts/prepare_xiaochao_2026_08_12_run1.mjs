@@ -3,7 +3,7 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const root = "/Users/chao/Documents/dailyvideos";
+const root = "<原制作工作区>";
 const date = "2026-08-12";
 const contentRoot = path.join(root, "content", date);
 const outputRoot = path.join(root, "output", "xiaochao", date);

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-compositor_dir="/Users/chao/Documents/dailyvideos/node_modules/@remotion/compositor-darwin-arm64"
+compositor_dir="<原制作工作区>/node_modules/@remotion/compositor-darwin-arm64"
 real_ffmpeg="$compositor_dir/ffmpeg"
 args=("$@")
 

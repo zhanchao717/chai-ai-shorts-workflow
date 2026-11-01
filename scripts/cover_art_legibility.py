@@ -10,10 +10,10 @@ import numpy as np
 from PIL import Image
 
 ART = {
-    "EP.178": ("/Users/chao/Documents/dailyvideos/videos/github-trending-top10/assets/cover-art.png",
-               "/Users/chao/Documents/dailyvideos/content/episode-178/cover-gpt/out"),
-    "EP.179": ("/Users/chao/Documents/dailyvideos/videos/ai-news-five-releases/assets/cover-art.png",
-               "/Users/chao/Documents/dailyvideos/content/episode-179/cover-gpt/out"),
+    "EP.178": ("<原制作工作区>/videos/github-trending-top10/assets/cover-art.png",
+               "<原制作工作区>/content/episode-178/cover-gpt/out"),
+    "EP.179": ("<原制作工作区>/videos/ai-news-five-releases/assets/cover-art.png",
+               "<原制作工作区>/content/episode-179/cover-gpt/out"),
 }
 BG = (5, 7, 15)          # #05070F
 DARK_RGB = np.array([5 / 255, 7 / 255, 15 / 255])

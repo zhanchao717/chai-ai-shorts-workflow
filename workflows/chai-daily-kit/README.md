@@ -8,9 +8,9 @@
 - `docs/端到端流程.md`：内容、证据、文案、画面、验收与复盘规则。
 - `workflows/`：编辑简报、平台文案、发布状态、成本记录、24/72 小时复盘模板与尺寸配置。
 - `scripts/`：公开官方消息/中文媒体新闻雷达，以及离线契约检查、文案检查、字幕断词诊断、成片和评审绑定检查。
-- `example/project/`：EP.227 可编辑 HyperFrames 工程及原配音、品牌和证据素材。
-- `example/release/`：已交付成片、两种封面、文案、来源及评审报告；作为参考，不是下一期默认题材或场景数。
-- `manifest.json`：包内每个文件的 SHA-256；`verify-kit.py` 验证解压后是否完整。
+- `example/project/`：EP.227 可编辑 HyperFrames 工程及原配音、品牌和证据素材。**不在公开仓库**（含成片与素材，只留在完整便携包里）。
+- `example/release/`：已交付成片、两种封面、文案、来源及评审报告。**不在公开仓库**，原因同上。
+- `manifest.json` / `verify-kit.py`：完整便携包的完整性清单与校验器。**不在公开仓库**，因此下文的 `python3 verify-kit.py` 在 clone 下来的仓库里会找不到文件，跳过即可。
 
 本包不包含浏览器登录态、账号密钥、旧带认证的发布脚本或 macOS 二进制软链。制作依赖 MiniMax/其他配音服务、HyperFrames 和平台浏览器会话，迁移后分别配置；这不是无账号零配置的一键自动发布软件。
 
@@ -20,7 +20,7 @@
 2. 在包根目录执行：
 
 ```bash
-python3 verify-kit.py
+python3 verify-kit.py           # 完整便携包才有；公开仓库跳过即可
 python3 scripts/validate_chai_editor_contract.py
 # 联网拉取公开新闻元数据（不登录、不写稿、不发布）：
 python3 scripts/chai_news_radar.py --hours 48 --limit 12
@@ -40,7 +40,7 @@ python3 scripts/chai_caption_boundaries.py example/project/caption_groups.json
 ## 给 Codex / DSH 的入口
 
 在当前包目录告诉助手：“按 SKILL.md 做下一期，先给三个与观众有关且证据充分的选题；不要发布。”
-使用现有工作区时调用现行 `daily-ai-shorts` 即可。迁移若要安装为 skill，复制**整个包目录**到技能根下的 `daily-ai-shorts`；已有同名技能先备份/合并，不能只复制 SKILL.md 而漏掉脚本和参考。包内 skill 不自带所有框架/调研连接器，缺失时先说明可用能力。
+使用现有工作区时调用现行 `daily-ai-shorts` 即可。迁移若要安装为 skill，复制**整个仓库**到技能根下的 `daily-ai-shorts`（`SKILL.md` 在仓库根）；已有同名技能先备份/合并，不能只复制 SKILL.md 而漏掉脚本和参考。包内 skill 不自带所有框架/调研连接器，缺失时先说明可用能力。
 
 ## 本轮改进
 
